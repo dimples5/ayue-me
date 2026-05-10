@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阿越干中学 | 个人独立站</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* 全局配色 */
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --light: #f8f9fa;
+            --dark: #333;
+            --gray: #7f8c8d;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* 导航栏 */
+        nav {
+            background-color: var(--primary);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* 头部横幅 */
+        header {
+            margin-top: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* 通用容器 */
+        .container {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent);
+            display: block;
+            margin: 10px auto;
+        }
+
+        /* 关于我 */
+        .about {
+            text-align: center;
+            font-size: 1.1rem;
+            max-width: 900px;
+            margin: 0 auto;
+            color: var(--gray);
+        }
+
+        /* 技能卡片 */
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        /* 作品展示 */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: var(--accent);
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-info h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-info p {
+            color: var(--gray);
+        }
+
+        /* 联系方式 */
+        .contact {
+            text-align: center;
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+
+        .contact a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- 导航栏 -->
+<nav>
+    <div class="nav-container">
+        <div class="logo">阿越干中学</div>
+        <div class="nav-links">
+            <a href="#home">首页</a>
+            <a href="#about">关于我</a>
+            <a href="#skills">技能</a>
+            <a href="#projects">作品</a>
+            <a href="#contact">联系我</a>
+        </div>
+    </div>
+</nav>
+
+<!-- 头部 -->
+<header id="home">
+    <h1>你好，我是阿越干中学</h1>
+    <p>持续学习、持续输出、在实践中成长，在行动中精进</p>
+</header>
+
+<!-- 关于我 -->
+<section class="container" id="about">
+    <h2 class="section-title">关于我</h2>
+    <div class="about">
+        <p>专注于知识沉淀、技能提升与实战分享，坚持「干中学」的核心理念。
+        热爱技术、热爱创作、热爱分享，用行动代替空想，用实践积累能力。
+        这里是我的个人独立空间，记录成长、展示作品、连接同好。</p>
+    </div>
+</section>
+
+<!-- 技能 -->
+<section class="container" id="skills">
+    <h2 class="section-title">我的技能</h2>
+    <div class="skills">
+        <div class="skill-card">
+            <h3>网页制作</h3>
+            <p>HTML / CSS / JavaScript 静态网页开发</p>
+        </div>
+        <div class="skill-card">
+            <h3>内容创作</h3>
+            <p>知识整理、文案撰写、经验分享</p>
+        </div>
+        <div class="skill-card">
+            <h3>学习能力</h3>
+            <p>快速上手新技能，高效实践落地</p>
+        </div>
+        <div class="skill-card">
+            <h3>问题解决</h3>
+            <p>实战导向，在做中学，在错中进步</p>
+        </div>
+    </div>
+</section>
+
+<!-- 作品 -->
+<section class="container" id="projects">
+    <h2 class="section-title">作品展示</h2>
+    <div class="projects">
+        <div class="project-card">
+            <img src="" alt="作品1">
+            <div class="project-info">
+                <h3>个人独立站</h3>
+                <p>纯HTML+CSS开发，极简风格，移动端适配</p>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="" alt="作品2">
+            <div class="project-info">
+                <h3>学习笔记</h3>
+                <p>系统化知识整理，持续更新，干货输出</p>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="" alt="作品3">
+            <div class="project-info">
+                <h3>实战项目</h3>
+                <p>各类实战小项目，边做边学，积累经验</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 联系 -->
+<section class="container" id="contact">
+    <h2 class="section-title">联系我</h2>
+    <div class="contact">
+        <p>欢迎交流学习、合作项目 🤝</p>
+        <p>邮箱：<a href="mailto:ayue@example.com">ayue@example.com</a></p>
+    </div>
+</section>
+
+<!-- 页脚 -->
+<footer>
+    <p>&copy; 2025 阿越干中学 | 个人独立站</p>
+    <p>在干中学，在学中干</p>
+</footer>
+
+</body>
+</html>
